@@ -1,0 +1,11 @@
+{
+    "base_link": "http://atlaselectoral.oep.org.bo/",
+    "exploration_bar" : ".//*[@class='bar mat-toolbar mat-toolbar-single-row']",
+    "buttons_dropdown_bar" :  ".//*[@class='mat-button ng-star-inserted']",
+    "sub_buttons_dropdown_bar" :   ".//*[@class='mat-menu-item mat-menu-item-submenu-trigger ng-star-inserted']",
+    "sub_sub_button_dropdown_bar" :  ".//*[@class='mat-menu-item ng-star-inserted']",
+    "buttons_center_el" : ".//*[@class='nav nav-tabs mx-auto justify-content-center']",
+    "info_columns" : ".//*[@class='col-md-6']",
+    "download_votes_els" : ".//*[@class='list-group-item list-group-item-action ng-star-inserted']" 
+
+}
