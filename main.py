@@ -14,7 +14,6 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 class EleccionesScraper:
 
-
     def __init__(self,project_path:str,  headless:bool = True):
         """
         This scraper downloads information from http://atlaselectoral.oep.org.bo/
@@ -85,61 +84,73 @@ class EleccionesScraper:
             selectors.get("buttons_dropdown_bar")
         )
 
-        print(f"FOUNR {len(buttons_dropdown_bar)}")
-
+        # Perform click only in the first option "Elecciones Generales"
         buttons_dropdown_bar[0].click()
 
-        # Find mat-menu-content
-        
+        # Find Dropdown Menu
         mat_menu_content = driver.find_elements_by_xpath(
             selectors.get("mat-menu-content")
         )
 
-        # perform click in each one of the sub dropdown sub elements:
+        # Search the div element that holds the dropdown sub menu
+
         sub_buttons_dropdown_bar = mat_menu_content[0].find_elements_by_xpath(
             selectors.get("sub_buttons_dropdown_bar")
         )
 
-        print(f"DOWNDOWN COUNTS {len(sub_buttons_dropdown_bar)}")
-
+        # perform click in each one of the sub dropdown sub elements:
 
         for dropdown in sub_buttons_dropdown_bar:
-
+            
+            # Make Click on the div el of the sub menu e.g."Elecciones Generales -> Elecciones Genearles 1985"
             dropdown.click()
+
+            # Find the sub sub menu e.g. " Elecciones Generales -> Elecciones Generales 1985 -> Elecciones Generales 1985"
 
             sub_sub_button_dropdown_div = driver.find_elements_by_id(
                 selectors.get("sub_sub_button_dropdown_div")
             )
 
+            # Perform Click on this sub menu element
             sub_sub_button_dropdown_div[0].click()
 
+            # Search for the buttons web el div in the middle  e.g. "div| Graficos | Datos Abiertos|div"
             nav_buttons_div = driver.find_elements_by_xpath(
                 selectors.get("buttons_center_div")
             )
 
+            #  Search for the buttons web elements the middle  e.g. ".... | Datos Abiertos"
             nav_buttons = nav_buttons_div[0].find_elements_by_xpath(
                 selectors.get("buttons_center_el")
             )
+
+            # Take a break
             time.sleep(2)
             
+            #  Perform click in this elemenment e.g. "Datos Abiertos"
             nav_buttons[-1].click()
 
 
+            # Search for Data Column
             els = driver.find_elements_by_xpath(
                             selectors.get("data_column")
             )
 
+            # take a break
             time.sleep(2)
 
-
+            # Search for the csv data elements. e.g. "Opciones de voto, Candidatos, Votos Totales"
             data_links = els[-1].find_elements_by_xpath(
                             selectors.get("download_votes_els")
             ) 
 
+            # Iterate over the a's elements that old the csv links
             for el in data_links:
+
                 print(el.text)
                 print(el.get_attribute("href"))
 
+                # Load the data into a pandas csv and show results
                 self.test_read_remote_csv( el.get_attribute("href") )
 
         time.sleep(5)
@@ -157,6 +168,9 @@ class EleccionesScraper:
 
 if __name__ == "__main__":
     elecciones = EleccionesScraper(project_path = ".")
-
+    
+    # Test main pipeline
     elecciones.main(headless=True)
+
+    # Test read remote csv
     #elecciones.test_read_remote_csv(csv_link = "http://atlaselectoral.oep.org.bo/descarga/52/votos_totales.csv")
