@@ -110,7 +110,7 @@ class EleccionesScraper:
             sub_sub_button_dropdown_div = driver.find_elements_by_id(
                 selectors.get("sub_sub_button_dropdown_div")
             )
-
+            print(sub_sub_button_dropdown_div)
             # Perform Click on this sub menu element
             sub_sub_button_dropdown_div[0].click()
 
@@ -170,7 +170,7 @@ if __name__ == "__main__":
     elecciones = EleccionesScraper(project_path = ".")
     
     # Test main pipeline
-    elecciones.main(headless=True)
+    elecciones.main(headless=False)
 
     # Test read remote csv
     #elecciones.test_read_remote_csv(csv_link = "http://atlaselectoral.oep.org.bo/descarga/52/votos_totales.csv")
