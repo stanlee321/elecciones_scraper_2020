@@ -20,36 +20,22 @@ python main.py
 
 **Output**
 ```
-Opciones de voto
-http://atlaselectoral.oep.org.bo/descarga/52/opcion_voto.csv
-                               sigla|nombre|colorRGB
-0           PUB|PARTIDO DE LA UNIÓN BOLIVIANA|0000FF
-1  MNR(ALIANZA)|ALIANZA DEL MOVIMIENTO NACIONALIS...
-2                                     ADN|ADN|FF0000
-3            UDP|UNIDAD DEMOCRÁTICA Y POPULAR|FF530D
-4         MITKA|MOVIMIENTO INDIO TUPAC KATARI|654321
-Candidatos
-http://atlaselectoral.oep.org.bo/descarga/52/candidatos.csv
-  NOMBRE|CARGO|OPCION O SIGLA|CODIGO GEOGRAFIA|CANDIDATO O GANADORJULIO TUMIRI APAZA|DIPUTADO|undefined|undefined|ELECTO
-0  JOSÉ ZEGARRA CERRUTO|DIPUTADO|undefined|undefi...                                                                    
-1  JOSÉ MARÍA PALACIOS LÓPEZ|DIPUTADO|undefined|u...                                                                    
-2  FERNANDO BAPTISTA GUMUCIO|SENADOR|undefined|un...                                                                    
-3  GUALBERTO CLAURE ORTUÑO|SENADOR|undefined|unde...                                                                    
-4  CARLOS CARRASCO FERNÁNDEZ|DIPUTADO|undefined|u...                                                                    
-Votos Totales
-http://atlaselectoral.oep.org.bo/descarga/52/votos_totales.csv
-  Codigo PAIS|Nombre PAIS|Codigo DEPARTAMENTO|Nombre DEPARTAMENTO|ADN|APIN|MITKA|MNR(ALIANZA)|PS-1|PUB|UDP|VO|BLANCOS|EMITIDOS|NULOS|VALIDOS
-0  BO|BOLIVIA|01|CHUQUISACA|10032|2185|1343|34609...                                                                                        
-1  BO|BOLIVIA|02|LA PAZ|77614|8454|16557|78023|24...                                                                                        
-2  BO|BOLIVIA|03|COCHABAMBA|42983|16449|3744|6464...                                                                                        
-3  BO|BOLIVIA|04|ORURO|10633|10819|2707|46232|646...                                                                                        
-4  BO|BOLIVIA|05|POTOSI|16090|2789|2677|105782|39...  
+full_path_to_file:  /home/stanlee321/Desktop/2020/ELECCIONES/scraper/tmp/ELECCIONES GENERALES 2014 (1).csv
+
+   Codigo Departamento   MAS-IPSP MAS-IPSP%  ...  Blancos   Nulos   Emitidos Inscritos Habilitados
+0       1   CHUQUISACA    165.785     63,38  ...    9.308  13.348    284.218               323.129
+1       2       LA PAZ  1.006.433     68,92  ...   22.690  50.817  1.533.812             1.678.769
+2       3   COCHABAMBA    637.125     66,67  ...   19.021  41.237  1.015.890             1.128.351
+3       4        ORURO    166.360     66,42  ...    5.700  10.725    266.873               293.576
+4       5       POTOSI    224.215     69,49  ...   14.091  20.932    357.695               409.144
+
+[5 rows x 17 columns]
+ 
 ```
 
 
 ## TODOs
 
-* Perform click and continue pipeline for each one of the dropdown elements in the `Elecciones Generales` menu button.
-
+* Handle correct name matching for file downloaded in ./temp
 
 
