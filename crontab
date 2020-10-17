@@ -1,0 +1,2 @@
+0 1 * * * python main.py >> /var/log/cron.log 
+# Mandatory blank line

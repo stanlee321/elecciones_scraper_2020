@@ -96,15 +96,15 @@ class EleccionesScraper:
          
          :PARAMS:
          -------
-         headless = if we run the scraper in headless mode (WITH OUT UI)
+         :param: headless: bool - if we run the scraper in headless mode (WITH OUT UI)
 
          :RETURNS:
          --------
          PATH TO THE DOWNLOADED FILE
         """
-
+        root_path = os.getenv("PROJ_DIR")
         # Open the selectors
-        with open(f"{self.PROJECT_PATH}/selectors.json") as a:
+        with open(f"{root_path}/selectors.json") as a:
             selectors = json.load(a)
 
         # Load the base link for the page
@@ -147,8 +147,8 @@ class EleccionesScraper:
          
          PARAMS:
          -------
-            folder: string that represent the location of a lot of csv files.
-            aprox_file_name: name for the year of the scraping , this is how is writed in the page.
+            :param: folder: string -  that represent the location of a lot of csv files.
+            :param: aprox_file_name: string - name for the year of the scraping , this is how is writed in the page.
          RETURNS:
          -------
          String, the full path to the downloaded file.
@@ -222,7 +222,7 @@ if __name__ == "__main__":
     elecciones = EleccionesScraper(project_path = cwd , download_dir = download_path)
     
     # Test main pipeline
-    elecciones.main(headless=False)
+    elecciones.main(headless=True)
 
     # Test read remote csv
     #elecciones.test_read_remote_csv(csv_link = "http://atlaselectoral.oep.org.bo/descarga/52/votos_totales.csv")

@@ -1,0 +1,11 @@
+version: '3'
+services:
+  scraper-service:
+    build: .
+    volumes:
+      - scraper_vol:/code/
+volumes:
+    scraper_vol:
+      external:
+        name: scraper-service
+    
