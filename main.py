@@ -14,6 +14,25 @@ from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 
 
+
+# """
+#     // "exploration_bar" : ".//*[@class='bar mat-toolbar mat-toolbar-single-row']",
+#     // "buttons_dropdown_bar" :  ".//*[@class='mat-button ng-star-inserted']",
+#     // "sub_buttons_dropdown_bar" : ".//*[@class='mat-menu-item mat-menu-item-submenu-trigger ng-star-inserted']",
+#     // "mat-menu-content": ".//*[@class='cdk-overlay-pane']",
+#     // "sub_sub_button_dropdown_div" :  "cdk-overlay-1",
+#     // "mat-menu-content_all": ".//*[@class='mat-menu-content']",
+#     // "sub_sub_button_dropdown_bar" :  ".//*[@class='mat-menu-item ng-star-inserted']",
+#     // "sub_sub_button_e2014" :  ".//button[normalize-space()='Elecciones Generales 2014']",
+#     // "buttons_center_div" : ".//*[@class='nav nav-tabs mx-auto justify-content-center']",
+#     // "buttons_center_el" : ".//a[@class='nav-link']",
+#     // "info_columns" : ".//*[@class='col-md-6']",
+#     // "data_column": ".//*[@class='card  h-100']",
+#     // "download_votes_els" : ".//a[@class='list-group-item list-group-item-action ng-star-inserted']" ,
+#     // "bottom_content_web_el" :  ".//*[@class='col-md-12 py-5 scrolledTable']",
+#     // "download_votes_csv_button": ".//*[@class='dt-button buttons-csv buttons-html5 btn btn-default btn-xs']"  
+# """
+
 class EleccionesScraper:
 
     def __init__(self,project_path:str, download_dir:str ):
@@ -102,13 +121,15 @@ class EleccionesScraper:
          --------
          PATH TO THE DOWNLOADED FILE
         """
-        root_path = os.getenv("PROJ_DIR")
+        root_path = "." #os.getenv("PROJ_DIR")
         # Open the selectors
         with open(f"{root_path}/selectors.json") as a:
             selectors = json.load(a)
 
+
         # Load the base link for the page
         link = selectors.get("base_link")
+        print(link)
 
         # Create web Driver 
         driver = self._login_custom( input_link = link,
@@ -120,26 +141,38 @@ class EleccionesScraper:
         # SCRAP BOTTOM CONTENT
 
         # Search for bottom content
-        bottom_content = driver.find_elements_by_xpath(selectors.get("bottom_content_web_el"))
+        bottom_content = driver.find_elements_by_xpath(selectors.get("download_button"))
 
-        # Search for "Exportar CSV" button
-        download_button = bottom_content[0].find_element_by_xpath(selectors.get("download_votes_csv_button"))
+        time.sleep(5)
 
         # Perform click on donwload button
         # This will download the file into the 
-        download_button.click()
+        bottom_content[1].click()
+        
+        time.sleep(10)
+
+        pop_up_window = driver.find_element_by_xpath(selectors.get("popup_field"))
+
+        time.sleep(5)
+        # Search for "Exportar CSV" button
+        pop_up_download_button = driver.find_element_by_xpath(selectors.get("popup_download_button"))
+
         
         time.sleep(5)
 
-        driver.close()
+        pop_up_download_button.click()
 
-        # Create path dir for the downloaded file
-        full_path_to_file = self.get_downloaded_file_name(folder = self.DOWNLOAD_DIR, 
-                                        aprox_file_name = self.elections_options["opt1"])
+        time.sleep(5)
+
+        # driver.close()
+
+        # # Create path dir for the downloaded file
+        # full_path_to_file = self.get_downloaded_file_name(folder = self.DOWNLOAD_DIR, 
+        #                                 aprox_file_name = self.elections_options["opt1"])
         
-        print("full_path_to_file: ", full_path_to_file)
+        # print("full_path_to_file: ", full_path_to_file)
 
-        return full_path_to_file
+        # return full_path_to_file
 
     def get_downloaded_file_name(self, folder:str, aprox_file_name:str)->str:
         """
@@ -222,7 +255,7 @@ if __name__ == "__main__":
     elecciones = EleccionesScraper(project_path = cwd , download_dir = download_path)
     
     # Test main pipeline
-    elecciones.main(headless=True)
+    elecciones.main(headless=False)
 
     # Test read remote csv
     #elecciones.test_read_remote_csv(csv_link = "http://atlaselectoral.oep.org.bo/descarga/52/votos_totales.csv")

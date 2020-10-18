@@ -1,18 +1,6 @@
 {
-    "base_link": "https://atlaselectoral.oep.org.bo/#/subproceso/17/1/1",
-    "exploration_bar" : ".//*[@class='bar mat-toolbar mat-toolbar-single-row']",
-    "buttons_dropdown_bar" :  ".//*[@class='mat-button ng-star-inserted']",
-    "sub_buttons_dropdown_bar" : ".//*[@class='mat-menu-item mat-menu-item-submenu-trigger ng-star-inserted']",
-    "mat-menu-content": ".//*[@class='cdk-overlay-pane']",
-    "sub_sub_button_dropdown_div" :  "cdk-overlay-1",
-    "mat-menu-content_all": ".//*[@class='mat-menu-content']",
-    "sub_sub_button_dropdown_bar" :  ".//*[@class='mat-menu-item ng-star-inserted']",
-    "sub_sub_button_e2014" :  ".//button[normalize-space()='Elecciones Generales 2014']",
-    "buttons_center_div" : ".//*[@class='nav nav-tabs mx-auto justify-content-center']",
-    "buttons_center_el" : ".//a[@class='nav-link']",
-    "info_columns" : ".//*[@class='col-md-6']",
-    "data_column": ".//*[@class='card  h-100']",
-    "download_votes_els" : ".//a[@class='list-group-item list-group-item-action ng-star-inserted']" ,
-    "bottom_content_web_el" :  ".//*[@class='col-md-12 py-5 scrolledTable']",
-    "download_votes_csv_button": ".//*[@class='dt-button buttons-csv buttons-html5 btn btn-default btn-xs']"  
+    "base_link": "https://computo.oep.org.bo/",
+    "download_button" :  ".//*[@class='dx-button dx-button-normal dx-button-mode-contained dx-widget dx-button-has-icon']",
+    "popup_field":  ".//*[@class='cdk-overlay-pane']",
+    "popup_download_button" : ".//*[@class='mat-raised-button mat-button-base mat-primary']"
 }
