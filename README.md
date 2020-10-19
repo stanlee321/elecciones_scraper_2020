@@ -17,6 +17,7 @@ pip install -r requirements
 Setear la variable entorno
 
 Setup project dir
+
 ```
 export PROJ_DIR=$PWD
 
@@ -39,7 +40,6 @@ COrrer el .sh
 
 ```
 sudo service cron reload
-
 
 ```
 

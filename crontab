@@ -1,1 +1,1 @@
-*/2 * * * * cd /home/stanlee321/Desktop/2020/elecciones/elecciones_scraper_2020 && /usr/bin/python3 /home/stanlee321/Desktop/2020/elecciones/elecciones_scraper_2020/main.py >> /home/stanlee321/Desktop/2020/elecciones/elecciones_scraper_2020/app.log 2>&1
+*/4 * * * * curl -v  http://localhost:5000/api/elecciones/download_data /home/stanlee321/Desktop/2020/elecciones/elecciones_scraper_2020/app.log 2>&1

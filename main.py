@@ -240,7 +240,7 @@ class EleccionesScraper:
                     #download_el = dialog_buttons.find_element_by_xpath(selectors.get("popup_download_button"))
                     download_el[-1].click()
 
-            time.sleep(5)
+            time.sleep(20)
             
             driver.close()
 
@@ -345,7 +345,7 @@ class EleccionesScraper:
                         #download_el = dialog_buttons.find_element_by_xpath(selectors.get("popup_download_button"))
                         download_el[-1].click()
 
-            time.sleep(5)
+            time.sleep(20)
             
             driver.close()
 
@@ -371,8 +371,7 @@ class EleccionesScraper:
         Step 1. Download the CSV file
         Step 2. Read this CSV file and make something with it
         """
-        if kind == "nal":
-            local_path_dir = self.run_scraper_nal(selectors = selectors, headless = headless)
+        local_path_dir = self.run_scraper_nal(selectors = selectors, headless = headless)
 
     def main_excel(self, selectors:dict,  headless:bool = False):
         
@@ -399,9 +398,9 @@ if __name__ == "__main__":
     elecciones = EleccionesScraper(project_path = cwd , download_dir = download_path)
     
     # Test main pipeline
-    elecciones.main(selectors=selectors, headless=False, kind = "nal")
+    elecciones.main(selectors=selectors, headless=True, kind = "nal")
     
-    elecciones.main_excel(selectors=selectors, headless=False)
+    elecciones.main_excel(selectors=selectors, headless=True)
 
     
     # Test read remote csv
