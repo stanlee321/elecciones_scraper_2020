@@ -6,5 +6,6 @@
     "download_button" :  ".//*[@class='dx-button dx-button-normal dx-button-mode-contained dx-widget dx-button-has-icon']",
     "popup_field":  ".//*[@class='cdk-overlay-pane']",
     "dialog_field": ".//*[@class='mat-dialog-actions']",
-    "popup_download_button" : ".//*[@class='mat-button-wrapper']"
+    "popup_download_button" : ".//*[@class='mat-button-wrapper']",
+    "excel_button": ".//*[@class='dx-item dx-tab']"
 }

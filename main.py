@@ -326,14 +326,24 @@ class EleccionesScraper:
             time.sleep(5)
 
             if pop_up_window is not None:
-
-                dialog_buttons = pop_up_window.find_element_by_xpath(selectors.get("dialog_field"))
                 
-        
-                if dialog_buttons is not None:
-                    download_el = driver.find_elements_by_xpath(selectors.get("popup_download_button"))
-                    #download_el = dialog_buttons.find_element_by_xpath(selectors.get("popup_download_button"))
-                    download_el[-1].click()
+                excel_button = pop_up_window.find_element_by_xpath(selectors.get("excel_button"))
+                
+                if excel_button is not None:
+                    excel_button.click()
+                    time.sleep(5)
+
+                    # Load again the popup?
+
+                    pop_up_window = driver.find_element_by_xpath(selectors.get("popup_field"))
+
+                    dialog_buttons = pop_up_window.find_element_by_xpath(selectors.get("dialog_field"))
+                
+                    if dialog_buttons is not None:
+                        download_el = driver.find_elements_by_xpath(selectors.get("popup_download_button"))
+                        print(len(download_el))
+                        #download_el = dialog_buttons.find_element_by_xpath(selectors.get("popup_download_button"))
+                        download_el[-1].click()
 
             time.sleep(5)
             
@@ -389,7 +399,9 @@ if __name__ == "__main__":
     elecciones = EleccionesScraper(project_path = cwd , download_dir = download_path)
     
     # Test main pipeline
-    elecciones.main(selectors=selectors, headless=True, kind = "nal")
+    elecciones.main(selectors=selectors, headless=False, kind = "nal")
+    
+    elecciones.main_excel(selectors=selectors, headless=False)
 
     
     # Test read remote csv

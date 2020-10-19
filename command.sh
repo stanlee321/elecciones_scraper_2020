@@ -8,4 +8,3 @@ touch $LOG_FILE
 crontab $PROJ_DIR/crontab
 crontab -l
 cron  && tail -f $LOG_FILE
-
