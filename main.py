@@ -1,4 +1,3 @@
-#!/home/stanlee321/anaconda3/envs/ML_p38/bin/python
 
 import json
 
