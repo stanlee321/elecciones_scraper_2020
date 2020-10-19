@@ -34,3 +34,6 @@ sudo service cron reload
 
 
 
+## Refs
+
+* https://medium.com/@gavinwiener/how-to-schedule-a-python-script-cron-job-dea6cbf69f4e

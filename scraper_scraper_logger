@@ -202,3 +202,12 @@
 2020-10-19 01:41:04,654 WDM INFO Get LATEST driver version for 85.0.4183
 2020-10-19 01:41:04,930 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/85.0.4183.87/chromedriver] found in cache
 2020-10-19 01:42:26,531 My_login INFO DONE!!! at time: 2020-10-19 01:42:26
+2020-10-19 01:46:01,778 root INFO STARTING LOGGING at Machine: stanlee321-HP-240-G1-Notebook-PC
+2020-10-19 01:48:02,88 root INFO STARTING LOGGING at Machine: stanlee321-HP-240-G1-Notebook-PC
+2020-10-19 01:48:48,682 root INFO STARTING LOGGING at Machine: stanlee321-HP-240-G1-Notebook-PC
+2020-10-19 01:48:48,739 WDM INFO Current google-chrome version is 85.0.4183
+2020-10-19 01:48:48,739 WDM INFO Get LATEST driver version for 85.0.4183
+2020-10-19 01:48:49,750 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/85.0.4183.87/chromedriver] found in cache
+2020-10-19 01:50:01,392 root INFO STARTING LOGGING at Machine: stanlee321-HP-240-G1-Notebook-PC
+2020-10-19 01:50:12,630 My_login INFO DONE!!! at time: 2020-10-19 01:50:12
+2020-10-19 01:54:01,834 root INFO STARTING LOGGING at Machine: stanlee321-HP-240-G1-Notebook-PC
