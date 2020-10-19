@@ -1,24 +1,46 @@
-FROM python:3.8-alpine3.10
+FROM python:3.7-alpine3.8
 
 ENV PROJ_DIR="/code"
 ENV LOG_FILE="${PROJ_DIR}/app.log"
-ENV CRON_SPEC="* * * * *" 
+ENV CRON_SPEC="*/2 * * * *"
+
+ENV PATH="/usr/bin/chromedriver:${PATH}" 
+
 WORKDIR ${PROJ_DIR}
 
-RUN apk update
-RUN echo "http://dl-8.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
-
 # update apk repo
-RUN echo "http://dl-4.alpinelinux.org/alpine/v3.10/main" >> /etc/apk/repositories && \
-    echo "http://dl-4.alpinelinux.org/alpine/v3.10/community" >> /etc/apk/repositories
-RUN apk update
+RUN echo "http://dl-4.alpinelinux.org/alpine/v3.8/main" >> /etc/apk/repositories && \
+    echo "http://dl-4.alpinelinux.org/alpine/v3.8/community" >> /etc/apk/repositories
 
-RUN apk --no-cache --update-cache add gcc gfortran build-base wget freetype-dev libpng-dev openblas-dev 
-RUN apk --update add libgcc musl-dev jpeg-dev zlib-dev
-RUN ln -s /usr/include/locale.h /usr/include/xlocale.h
-
-# Chrome
-RUN apk add chromium chromium-chromedriver
+RUN apk update && apk add --no-cache bash \
+        alsa-lib \
+        at-spi2-atk \
+        atk \
+        cairo \
+        cups-libs \
+        dbus-libs \
+        eudev-libs \
+        expat \
+        flac \
+        gdk-pixbuf \
+        glib \
+        libgcc \
+        libjpeg-turbo \
+        libpng \
+        libwebp \
+        libx11 \
+        libxcomposite \
+        libxdamage \
+        libxext \
+        libxfixes \
+        tzdata \
+        libexif \
+        udev \
+        xvfb \
+        zlib-dev \
+        chromium \
+        chromium-chromedriver
+# install chromedriver
 
 # upgrade pip
 RUN pip install --upgrade pip
@@ -33,4 +55,4 @@ RUN echo "${CRON_SPEC} python ${PROJ_DIR}/main.py >> ${LOG_FILE} 2>&1" > ${PROJ_
 RUN touch ${LOG_FILE} # Needed for the tail
 RUN crontab ${PROJ_DIR}/crontab
 RUN crontab -l
-CMD crond  && tail -f ${LOG_FILE} #crond runs per default in the background
+CMD crond  && tail -f ${LOG_FILE}

@@ -1,0 +1,10 @@
+{
+    "base_link": "https://computo.oep.org.bo/",
+    "dropdown_buttons": ".//*[@class='ui-dropdown-label-container']",
+    "dropdown_els": ".//*[@class='ui-dropdown-item ui-corner-all']",
+    "consultar_button":".//*[@class='mat-raised-button mat-button-base mat-primary']",
+    "download_button" :  ".//*[@class='dx-button dx-button-normal dx-button-mode-contained dx-widget dx-button-has-icon']",
+    "popup_field":  ".//*[@class='cdk-overlay-pane']",
+    "dialog_field": ".//*[@class='mat-dialog-actions']",
+    "popup_download_button" : ".//*[@class='mat-button-wrapper']"
+}

@@ -1,5 +1,6 @@
 .PHOY: up
 .PHOY: down
+.PHOY: cron
 
 up:
 	docker-compose stop
@@ -10,3 +11,4 @@ up:
 down:
 	docker-compose stop
 	docker-compose down
+

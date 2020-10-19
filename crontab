@@ -1,2 +1,1 @@
-0 1 * * * python main.py >> /var/log/cron.log 
-# Mandatory blank line
+*/2 * * * * cd /home/stanlee321/Desktop/2020/elecciones/elecciones_scraper_2020 && /home/stanlee321/Desktop/2020/elecciones/elecciones_scraper_2020/main.py >> /home/stanlee321/Desktop/2020/elecciones/elecciones_scraper_2020/app.log 2>&1

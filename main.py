@@ -1,37 +1,20 @@
+#!/home/stanlee321/anaconda3/envs/ML_p38/bin/python
+
 import json
 
-import pandas as pd
-from urllib.request import Request, urlopen
-import io
 import os
 import sys
 import time
-import glob
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
+from logger import LoggingHandler
 
+from datetime import  datetime
 
-
-# """
-#     // "exploration_bar" : ".//*[@class='bar mat-toolbar mat-toolbar-single-row']",
-#     // "buttons_dropdown_bar" :  ".//*[@class='mat-button ng-star-inserted']",
-#     // "sub_buttons_dropdown_bar" : ".//*[@class='mat-menu-item mat-menu-item-submenu-trigger ng-star-inserted']",
-#     // "mat-menu-content": ".//*[@class='cdk-overlay-pane']",
-#     // "sub_sub_button_dropdown_div" :  "cdk-overlay-1",
-#     // "mat-menu-content_all": ".//*[@class='mat-menu-content']",
-#     // "sub_sub_button_dropdown_bar" :  ".//*[@class='mat-menu-item ng-star-inserted']",
-#     // "sub_sub_button_e2014" :  ".//button[normalize-space()='Elecciones Generales 2014']",
-#     // "buttons_center_div" : ".//*[@class='nav nav-tabs mx-auto justify-content-center']",
-#     // "buttons_center_el" : ".//a[@class='nav-link']",
-#     // "info_columns" : ".//*[@class='col-md-6']",
-#     // "data_column": ".//*[@class='card  h-100']",
-#     // "download_votes_els" : ".//a[@class='list-group-item list-group-item-action ng-star-inserted']" ,
-#     // "bottom_content_web_el" :  ".//*[@class='col-md-12 py-5 scrolledTable']",
-#     // "download_votes_csv_button": ".//*[@class='dt-button buttons-csv buttons-html5 btn btn-default btn-xs']"  
-# """
+log = LoggingHandler()
 
 class EleccionesScraper:
 
@@ -101,7 +84,7 @@ class EleccionesScraper:
             print("There's some error in log in.")
             print(sys.exc_info()[0])
 
-    def run_scraper(self,  headless:bool = False)->str:
+    def run_scraper(self, selectors:dict,  headless:bool = False)->str:
         """
          Download a file from a given page.
          
@@ -121,14 +104,10 @@ class EleccionesScraper:
          --------
          PATH TO THE DOWNLOADED FILE
         """
-        root_path = "." #os.getenv("PROJ_DIR")
-        # Open the selectors
-        with open(f"{root_path}/selectors.json") as a:
-            selectors = json.load(a)
-
 
         # Load the base link for the page
         link = selectors.get("base_link")
+
         print(link)
 
         # Create web Driver 
@@ -157,7 +136,6 @@ class EleccionesScraper:
         # Search for "Exportar CSV" button
         pop_up_download_button = driver.find_element_by_xpath(selectors.get("popup_download_button"))
 
-        
         time.sleep(5)
 
         pop_up_download_button.click()
@@ -174,88 +152,246 @@ class EleccionesScraper:
 
         # return full_path_to_file
 
-    def get_downloaded_file_name(self, folder:str, aprox_file_name:str)->str:
+    def run_scraper_nal(self, selectors:dict,  headless:bool = False)->str:
         """
-         Compares two strings, if one is equal or aprox to the another, returns the original string.
-         
-         PARAMS:
-         -------
-            :param: folder: string -  that represent the location of a lot of csv files.
-            :param: aprox_file_name: string - name for the year of the scraping , this is how is writed in the page.
-         RETURNS:
-         -------
-         String, the full path to the downloaded file.
-
-        """
+        Download a file from a given page.
         
-        files = glob.glob(folder+"/*.csv")
-        for f in files:
+        The name of the page is in selectors.json ->["base_link"],
+        In this case is https://atlaselectoral.oep.org.bo/#/subproceso/17/1/1 , 
+        this is the 2014 elections page, we can replace this link with any other link for scrap the page
+        for the "Exportar CSV" button in this new format of the target page.
 
-            f_name_norm = f.split("/")[-1].lower()
-            aprox_file_name_norm = aprox_file_name.lower()
-
-            if aprox_file_name_norm in f_name_norm:
-                return f
-
-        # if not match, return the last el in the list of files
-        return files[-1]
-
-    def test_read_remote_csv(self, csv_link):
-        """
-        Legacy code for read a href link to a remote csv  to Pandas Dataframe
-        """
-
-        response_raw = Request(csv_link, headers={'User-Agent': 'Mozilla/5.0'})
-        response = urlopen(response_raw,  timeout=2).read()
-
-        response = response.decode('utf-8')
+        Since this name is constat we take this as an approach for download the file in the bottom page
+        when we madee .click() on the "Exportar CSV" button.
         
-        df =pd.read_csv(io.StringIO(response))
+        :PARAMS:
+        -------
+        :param: headless: bool - if we run the scraper in headless mode (WITH OUT UI)
 
-        print(df.head())
-    
-    def read_csv_to_dataframe(self, csv_path:str)->pd.DataFrame:
+        :RETURNS:
+        --------
+        PATH TO THE DOWNLOADED FILE
         """
-        This method reads a csv file and returns a pandas dataframe
-        """
 
-        df = pd.read_csv(csv_path)
+        try:
+                
+            # Load the base link for the page
+            link = selectors.get("base_link")
 
+            # Create web Driver 
+            driver = self._login_custom( input_link = link,
+                        headless = headless)
 
-        return df
+            # Take some time for load the Page ....
+            time.sleep(5)
 
-    def main(self,   headless:bool = False):
+            # SCRAP Dropdown buttons
+
+            dropdown_buttons = driver.find_elements_by_xpath(selectors.get("dropdown_buttons"))
+
+            time.sleep(5)
+
+            dropdown_buttons[0].click()
+
+            time.sleep(5)
+            
+            #list dropdown inner elements
+
+            dropdown_elements = driver.find_elements_by_xpath(selectors.get("dropdown_els"))
+
+            time.sleep(5)
+
+            #click on the last element
+            dropdown_elements[-1].click()
+
+            time.sleep(10)
+
+            # Click on "Consultar"
+
+            button_consultar = driver.find_elements_by_xpath(selectors.get("consultar_button"))
+
+            button_consultar[-1].click()
+            
+            time.sleep(20)
+
+            ##############################
+            #############################
+            # Search for buttom content
+            bottom_content = driver.find_elements_by_xpath(selectors.get("download_button"))
+
+            time.sleep(5)
+
+            # Perform click on donwload button
+            # This will download the file into the 
+            bottom_content[1].click()
+            
+            time.sleep(10)
+
+            pop_up_window = driver.find_element_by_xpath(selectors.get("popup_field"))
+
+            time.sleep(5)
+
+            if pop_up_window is not None:
+
+                dialog_buttons = pop_up_window.find_element_by_xpath(selectors.get("dialog_field"))
+                
+        
+                if dialog_buttons is not None:
+                    download_el = driver.find_elements_by_xpath(selectors.get("popup_download_button"))
+                    #download_el = dialog_buttons.find_element_by_xpath(selectors.get("popup_download_button"))
+                    download_el[-1].click()
+
+            time.sleep(5)
+            
+            driver.close()
+
+            print("DONE!!!")
+            # # Create path dir for the downloaded file
+            # full_path_to_file = self.get_downloaded_file_name(folder = self.DOWNLOAD_DIR, 
+            #                                 aprox_file_name = self.elections_options["opt1"])
+            
+            # print("full_path_to_file: ", full_path_to_file)
+
+            # return full_path_to_file
+            now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+            log.logger.info(f"DONE!!! at time: {now}")
+
+        except Exception as e:
+            print(e)
+
+            now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+            log.logger.error(f"ERROR!!! at time: {now}, {e}")
+
+        return None
+
+    def run_scraper_excel(self, selectors:dict,  headless:bool = False):
+        try:
+                
+            print("SELECTORS: ", selectors)
+            # Load the base link for the page
+            link = selectors.get("base_link")
+
+            # Create web Driver 
+            driver = self._login_custom( input_link = link,
+                        headless = headless)
+
+            # Take some time for load the Page ....
+            time.sleep(5)
+
+            # SCRAP Dropdown buttons
+
+            dropdown_buttons = driver.find_elements_by_xpath(selectors.get("dropdown_buttons"))
+
+            time.sleep(5)
+
+            dropdown_buttons[0].click()
+
+            time.sleep(5)
+            
+            #list dropdown inner elements
+
+            dropdown_elements = driver.find_elements_by_xpath(selectors.get("dropdown_els"))
+
+            time.sleep(5)
+
+            #click on the last element
+            dropdown_elements[-1].click()
+
+            time.sleep(10)
+
+            # Click on "Consultar"
+
+            button_consultar = driver.find_elements_by_xpath(selectors.get("consultar_button"))
+
+            button_consultar[-1].click()
+            
+            time.sleep(20)
+
+            ##############################
+            #############################
+            # Search for buttom content
+            bottom_content = driver.find_elements_by_xpath(selectors.get("download_button"))
+
+            time.sleep(5)
+
+            # Perform click on donwload button
+            # This will download the file into the 
+            bottom_content[1].click()
+            
+            time.sleep(10)
+
+            pop_up_window = driver.find_element_by_xpath(selectors.get("popup_field"))
+
+            time.sleep(5)
+
+            if pop_up_window is not None:
+
+                dialog_buttons = pop_up_window.find_element_by_xpath(selectors.get("dialog_field"))
+                
+        
+                if dialog_buttons is not None:
+                    download_el = driver.find_elements_by_xpath(selectors.get("popup_download_button"))
+                    #download_el = dialog_buttons.find_element_by_xpath(selectors.get("popup_download_button"))
+                    download_el[-1].click()
+
+            time.sleep(5)
+            
+            driver.close()
+
+            print("DONE!!!")
+            # # Create path dir for the downloaded file
+            # full_path_to_file = self.get_downloaded_file_name(folder = self.DOWNLOAD_DIR, 
+            #                                 aprox_file_name = self.elections_options["opt1"])
+            
+            # print("full_path_to_file: ", full_path_to_file)
+
+            # return full_path_to_file
+            now = str(datetime.now())
+            log.logger.info(f"DONE!!! at time: {now}")
+        except Exception as e:
+            now = str(datetime.now())
+            log.logger.error(f"ERROR!!! at time: {now}")
+        return None
+
+    def main(self, selectors:dict,  headless:bool = False, kind="nal"):
         """
         Main pipelin for download the csv file from the page.
 
         Step 1. Download the CSV file
         Step 2. Read this CSV file and make something with it
         """
+        if kind == "nal":
+            local_path_dir = self.run_scraper_nal(selectors = selectors, headless = headless)
 
-        # Step 1
-        local_path_dir = self.run_scraper( headless = headless)
+    def main_excel(self, selectors:dict,  headless:bool = False):
+        
+        local_path_dir = self.run_scraper_excel(selectors = selectors, headless = headless)
 
-        # Step 2
-        df = self.read_csv_to_dataframe(csv_path = local_path_dir )
-
-        print(df.head())
 
 
 if __name__ == "__main__":
 
-    cwd = os.getcwd()
+    cwd = os.getenv("PROJ_DIR")
+
     # Create aux folder name for download files
+
     download_path = os.path.join(cwd, "tmp")
+
+    # Open the selectors
+    with open(f"{cwd}/selectors_nal.json") as a:
+        selectors = json.load(a)
 
     # Create safe dir Folder 
     os.makedirs(download_path, exist_ok=True)  # succeeds even if directory exists.
-
 
     # Create Instance of the scraper
     elecciones = EleccionesScraper(project_path = cwd , download_dir = download_path)
     
     # Test main pipeline
-    elecciones.main(headless=False)
+    elecciones.main(selectors=selectors, headless=True, kind = "nal")
 
+    
     # Test read remote csv
     #elecciones.test_read_remote_csv(csv_link = "http://atlaselectoral.oep.org.bo/descarga/52/votos_totales.csv")
