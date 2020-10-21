@@ -240,7 +240,7 @@ class EleccionesScraper:
                     #download_el = dialog_buttons.find_element_by_xpath(selectors.get("popup_download_button"))
                     download_el[-1].click()
 
-            time.sleep(20)
+            time.sleep(60)
             
             driver.close()
 
@@ -345,7 +345,7 @@ class EleccionesScraper:
                         #download_el = dialog_buttons.find_element_by_xpath(selectors.get("popup_download_button"))
                         download_el[-1].click()
 
-            time.sleep(20)
+            time.sleep(60)
             
             driver.close()
 
@@ -361,7 +361,7 @@ class EleccionesScraper:
             log.logger.info(f"DONE!!! at time: {now}")
         except Exception as e:
             now = str(datetime.now())
-            log.logger.error(f"ERROR!!! at time: {now}")
+            log.logger.error(f"ERROR!!! at time: {now} {e}")
         return None
 
     def main(self, selectors:dict,  headless:bool = False, kind="nal"):
@@ -398,9 +398,9 @@ if __name__ == "__main__":
     elecciones = EleccionesScraper(project_path = cwd , download_dir = download_path)
     
     # Test main pipeline
-    elecciones.main(selectors=selectors, headless=True, kind = "nal")
+    elecciones.main(selectors=selectors, headless=False, kind = "nal")
     
-    elecciones.main_excel(selectors=selectors, headless=True)
+    elecciones.main_excel(selectors=selectors, headless=False)
 
     
     # Test read remote csv

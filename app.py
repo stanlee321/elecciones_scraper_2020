@@ -5,9 +5,7 @@ import os
 from datetime import datetime
 from flask import Flask, request
 
-
 from main import EleccionesScraper
-
 
 app = Flask(__name__)
 
