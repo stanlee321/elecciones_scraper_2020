@@ -842,3 +842,189 @@ TypeError: expected str, bytes or os.PathLike object, not NoneType
 2020-10-21 08:54:09,407 WDM INFO Current google-chrome version is 85.0.4183
 2020-10-21 08:54:09,408 WDM INFO Get LATEST driver version for 85.0.4183
 2020-10-21 08:54:15,125 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/85.0.4183.87/chromedriver] found in cache
+2021-03-08 11:20:51,878 root INFO STARTING LOGGING at Machine: pc-home
+2021-03-08 11:22:24,853 root INFO STARTING LOGGING at Machine: pc-home
+2021-03-08 11:22:24,908 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 11:22:24,909 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 11:22:25,210 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 11:22:25,384 WDM INFO Trying to download new driver from http://chromedriver.storage.googleapis.com/88.0.4324.96/chromedriver_linux64.zip
+2021-03-08 11:22:27,701 WDM INFO Driver has been saved in cache [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96]
+2021-03-08 11:23:44,67 My_login ERROR ERROR!!! at time: 2021-03-08 11:23:44, Message: element click intercepted: Element <span class="mat-button-wrapper">...</span> is not clickable at point (1178, 640). Other element would receive the click: <div _ngcontent-ora-c29="" class="mat-dialog-actions" mat-dialog-actions="">...</div>
+  (Session info: chrome=88.0.4324.96)
+
+2021-03-08 11:23:44,120 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 11:23:44,120 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 11:23:44,299 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 11:34:21,88 root INFO STARTING LOGGING at Machine: pc-home
+2021-03-08 11:34:21,143 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 11:34:21,144 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 11:34:21,398 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 11:35:37,614 My_login ERROR ERROR!!! at time: 2021-03-08 11:35:37, Message: element click intercepted: Element <span class="mat-button-wrapper">...</span> is not clickable at point (1178, 640). Other element would receive the click: <div _ngcontent-epn-c29="" class="mat-dialog-actions" mat-dialog-actions="">...</div>
+  (Session info: chrome=88.0.4324.96)
+
+2021-03-08 11:35:37,667 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 11:35:37,667 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 11:35:37,839 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 11:35:46,949 My_login ERROR ERROR!!! at time: 2021-03-08 11:35:46.948943 Message: chrome not reachable
+  (Session info: chrome=88.0.4324.96)
+
+2021-03-08 11:36:30,815 root INFO STARTING LOGGING at Machine: pc-home
+2021-03-08 11:36:30,866 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 11:36:30,866 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 11:36:31,49 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 11:37:47,90 My_login ERROR ERROR!!! at time: 2021-03-08 11:37:47, Message: element click intercepted: Element <span class="mat-button-wrapper">...</span> is not clickable at point (1178, 653). Other element would receive the click: <div _ngcontent-lly-c29="" class="mat-dialog-actions" mat-dialog-actions="">...</div>
+  (Session info: chrome=88.0.4324.96)
+
+2021-03-08 11:37:47,141 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 11:37:47,141 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 11:37:47,309 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 11:39:08,870 root INFO STARTING LOGGING at Machine: pc-home
+2021-03-08 11:39:08,922 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 11:39:08,922 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 11:39:09,195 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 11:41:22,520 root INFO STARTING LOGGING at Machine: pc-home
+2021-03-08 11:41:22,572 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 11:41:22,572 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 11:41:22,917 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 11:42:32,779 My_login ERROR ERROR!!! at time: 2021-03-08 11:42:32, Message: invalid argument: 'value' must be a string
+  (Session info: chrome=88.0.4324.96)
+
+2021-03-08 11:42:32,832 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 11:42:32,833 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 11:42:33,99 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 11:42:42,178 My_login ERROR ERROR!!! at time: 2021-03-08 11:42:42.178563 Message: chrome not reachable
+  (Session info: chrome=88.0.4324.96)
+
+2021-03-08 11:44:15,119 root INFO STARTING LOGGING at Machine: pc-home
+2021-03-08 11:44:15,172 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 11:44:15,172 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 11:44:15,463 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 11:45:30,450 My_login ERROR ERROR!!! at time: 2021-03-08 11:45:30, Message: invalid argument: 'value' must be a string
+  (Session info: chrome=88.0.4324.96)
+
+2021-03-08 11:47:52,879 root INFO STARTING LOGGING at Machine: pc-home
+2021-03-08 11:47:52,930 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 11:47:52,930 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 11:47:53,255 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 11:49:03,61 My_login ERROR ERROR!!! at time: 2021-03-08 11:49:03, Message: invalid argument: 'value' must be a string
+  (Session info: chrome=88.0.4324.96)
+
+2021-03-08 11:50:34,534 root INFO STARTING LOGGING at Machine: pc-home
+2021-03-08 11:50:34,585 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 11:50:34,585 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 11:50:34,846 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 11:51:29,842 My_login ERROR ERROR!!! at time: 2021-03-08 11:51:29, 'function' object has no attribute 'get'
+2021-03-08 11:51:54,977 root INFO STARTING LOGGING at Machine: pc-home
+2021-03-08 11:51:55,27 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 11:51:55,28 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 11:51:55,298 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 11:52:50,177 My_login ERROR ERROR!!! at time: 2021-03-08 11:52:50, Message: invalid selector: Unable to locate an element with the xpath expression .//*[div[@aria-label='Beni'] because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string './/*[div[@aria-label='Beni']' is not a valid XPath expression.
+  (Session info: chrome=88.0.4324.96)
+
+2021-03-08 11:55:48,395 root INFO STARTING LOGGING at Machine: pc-home
+2021-03-08 11:55:48,446 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 11:55:48,446 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 11:55:48,793 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 11:56:43,814 My_login ERROR ERROR!!! at time: 2021-03-08 11:56:43, Message: no such element: Unable to locate element: {"method":"xpath","selector":".//*[@class='ui-dropdown-item ui-corner-all'][text()='Beni']"}
+  (Session info: chrome=88.0.4324.96)
+
+2021-03-08 12:03:03,18 root INFO STARTING LOGGING at Machine: pc-home
+2021-03-08 12:03:03,71 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 12:03:03,71 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 12:03:03,306 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 12:03:58,289 My_login ERROR ERROR!!! at time: 2021-03-08 12:03:58, Message: no such element: Unable to locate element: {"method":"xpath","selector":".//*[@class='ui-dropdown-item ui-corner-all']"}
+  (Session info: chrome=88.0.4324.96)
+
+2021-03-08 12:04:17,451 root INFO STARTING LOGGING at Machine: pc-home
+2021-03-08 12:04:17,506 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 12:04:17,506 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 12:04:17,685 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 12:04:36,873 root INFO STARTING LOGGING at Machine: pc-home
+2021-03-08 12:04:36,928 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 12:04:36,928 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 12:04:37,101 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 12:05:32,433 My_login ERROR ERROR!!! at time: 2021-03-08 12:05:32, object of type 'WebElement' has no len()
+2021-03-08 12:06:10,722 root INFO STARTING LOGGING at Machine: pc-home
+2021-03-08 12:06:10,771 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 12:06:10,771 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 12:06:10,948 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 12:07:05,826 My_login ERROR ERROR!!! at time: 2021-03-08 12:07:05, 'WebDriver' object has no attribute 'find_element_by_xpaths'
+2021-03-08 12:07:37,345 root INFO STARTING LOGGING at Machine: pc-home
+2021-03-08 12:07:37,399 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 12:07:37,399 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 12:07:37,574 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 12:12:15,20 root INFO STARTING LOGGING at Machine: pc-home
+2021-03-08 12:12:15,73 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 12:12:15,73 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 12:12:15,313 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 12:13:25,442 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 12:13:25,442 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 12:13:25,607 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 12:14:35,840 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 12:14:35,841 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 12:14:36,9 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 12:15:46,205 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 12:15:46,206 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 12:15:46,377 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 12:16:56,569 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 12:16:56,569 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 12:16:56,733 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 12:18:07,8 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 12:18:07,8 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 12:18:07,438 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 12:19:17,589 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 12:19:17,590 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 12:19:17,777 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 12:20:27,914 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 12:20:27,914 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 12:20:28,75 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 12:23:51,379 root INFO STARTING LOGGING at Machine: pc-home
+2021-03-08 12:23:51,432 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 12:23:51,432 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 12:23:51,671 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 12:25:01,847 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 12:25:01,848 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 12:25:02,19 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 12:26:12,255 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 12:26:12,256 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 12:26:12,424 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 12:27:23,598 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 12:27:23,598 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 12:27:23,763 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 12:28:34,120 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 12:28:34,120 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 12:28:34,287 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 12:29:44,902 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 12:29:44,903 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 12:29:45,146 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 12:30:55,539 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 12:30:55,539 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 12:30:55,755 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 12:32:05,857 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 12:32:05,857 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 12:32:06,85 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 12:33:16,305 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 12:33:16,306 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 12:33:16,470 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 12:34:26,699 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 12:34:26,699 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 12:34:26,867 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 12:35:36,954 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 12:35:36,954 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 12:35:37,123 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 12:36:47,411 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 12:36:47,412 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 12:36:47,631 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 12:37:58,20 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 12:37:58,21 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 12:37:58,241 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 12:39:08,318 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 12:39:08,319 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 12:39:08,483 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 12:40:18,649 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 12:40:18,649 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 12:40:18,809 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 12:41:29,170 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 12:41:29,170 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 12:41:29,339 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache

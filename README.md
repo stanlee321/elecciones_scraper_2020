@@ -1,12 +1,14 @@
 # Elecciones Scraper
 
-This bot download info from `http://atlaselectoral.oep.org.bo/`
+This bot download info from `https://computo.oep.org.bo/`
 
+El bot corre en un loop infinito dentro del `main.py` para descargar los `csv`  de cada departamento.
+
+El bot tarda alrededor de 1 minuto por departamento.
+
+Si la descarga de `csv` se detiene por algun error, incrementar los tiempos de `time.sleep()` corredpondientes a cada proceso, la pagina puede empezar a volverce lenta y eso causara que se incremente los tiempos de espera para el bot.
 
 ## Setup
-
-
-Hace el install dentro del python del sistema.
 
 ```console
 
@@ -23,36 +25,15 @@ export PROJ_DIR=$PWD
 
 ```
 
-Permisos para cronjb
-
-
-```
-chmod 400 ./command.sh
-
-```
-
-COrrer el .sh
-
-```command
-./command.sh
-```
-
-
-```
-sudo service cron reload
-
-```
 
 ## How to run:
 
+```
+python main.py
+```
 
+## TODOS
 
-## TODOs
-
-* Handle correct name matching for file downloaded in ./temp
-
-
-
-## Refs
-
-* https://medium.com/@gavinwiener/how-to-schedule-a-python-script-cron-job-dea6cbf69f4e
+* CI/CD with docker
+* Setup cronjobs 
+* Setup Airflow if is possible

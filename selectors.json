@@ -1,6 +1,0 @@
-{
-    "base_link": "https://computo.oep.org.bo/",
-    "download_button" :  ".//*[@class='dx-button dx-button-normal dx-button-mode-contained dx-widget dx-button-has-icon']",
-    "popup_field":  ".//*[@class='cdk-overlay-pane']",
-    "popup_download_button" : ".//*[@class='mat-raised-button mat-button-base mat-primary']"
-}

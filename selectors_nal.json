@@ -7,5 +7,7 @@
     "popup_field":  ".//*[@class='cdk-overlay-pane']",
     "dialog_field": ".//*[@class='mat-dialog-actions']",
     "popup_download_button" : ".//*[@class='mat-button-wrapper']",
-    "excel_button": ".//*[@class='dx-item dx-tab']"
+    "excel_button": ".//*[@class='dx-item dx-tab']",
+    "dep_fields" :  ".//*[@class='ng-tns-c5-14 ui-dropdown-label ui-inputtext ui-corner-all ui-placeholder ng-star-inserted']",
+    "dep_fields_options" :  ".//*[@class='ui-dropdown-item ui-corner-all']"
 }
