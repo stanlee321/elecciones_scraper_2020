@@ -192,13 +192,13 @@ class EleccionesScraper:
         Step 1. Download the CSV file
         Step 2. Read this CSV file and make something with it
         """
-        for dep in range(0, 8):
+        for dep in range(0, 9):
             local_path_dir = self.run_scraper_dep(selectors = selectors, headless = headless, dep_id=dep)
 
 
 
 if __name__ == "__main__":
-    
+
     cwd = os.getenv("PROJ_DIR")
 
     # Create aux folder name for download files

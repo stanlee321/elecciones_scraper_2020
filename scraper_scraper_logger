@@ -1028,3 +1028,24 @@ SyntaxError: Failed to execute 'evaluate' on 'Document': The string './/*[div[@a
 2021-03-08 12:41:29,170 WDM INFO Current google-chrome version is 88.0.4324
 2021-03-08 12:41:29,170 WDM INFO Get LATEST driver version for 88.0.4324
 2021-03-08 12:41:29,339 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 12:42:39,446 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 12:42:39,447 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 12:42:39,742 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 12:43:50,227 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 12:43:50,227 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 12:43:50,457 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 12:45:00,533 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 12:45:00,533 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 12:45:00,706 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 12:46:10,851 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 12:46:10,852 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 12:46:11,22 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 12:47:21,328 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 12:47:21,328 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 12:47:21,499 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 12:48:31,811 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 12:48:31,811 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 12:48:32,33 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
+2021-03-08 12:49:42,213 WDM INFO Current google-chrome version is 88.0.4324
+2021-03-08 12:49:42,213 WDM INFO Get LATEST driver version for 88.0.4324
+2021-03-08 12:49:42,432 WDM INFO Driver [/home/stanlee321/.wdm/drivers/chromedriver/linux64/88.0.4324.96/chromedriver] found in cache
