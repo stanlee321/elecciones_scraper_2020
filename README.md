@@ -6,6 +6,8 @@ El bot corre en un loop infinito dentro del `main.py` para descargar los `csv`  
 
 El bot tarda alrededor de 1 minuto por departamento.
 
+The info is downloaded into the folder `tmp/`
+
 Si la descarga de `csv` se detiene por algun error, incrementar los tiempos de `time.sleep()` corredpondientes a cada proceso, la pagina puede empezar a volverce lenta y eso causara que se incremente los tiempos de espera para el bot.
 
 ## Setup
